@@ -1,0 +1,18 @@
+:root { font-family: Arial, sans-serif; color: #f6f7f8; }
+* { box-sizing: border-box; }
+body { margin: 0; overflow: hidden; background: transparent; }
+.medical-status { position: fixed; left: 50%; bottom: 7.5vh; display: flex; align-items: center; gap: 16px; width: min(640px, calc(100vw - 32px)); padding: 18px 20px; transform: translate(-50%, 18px); opacity: 0; pointer-events: none; border: 1px solid rgba(255,255,255,.12); border-left: 3px solid #ef5361; border-radius: 6px; background: rgba(14,17,22,.94); box-shadow: 0 14px 40px rgba(0,0,0,.35); transition: opacity .2s ease, transform .2s ease; }
+.medical-status.visible { opacity: 1; transform: translate(-50%, 0); }
+.status-mark { display: grid; place-items: center; flex: 0 0 40px; width: 40px; height: 40px; border: 1px solid rgba(239,83,97,.45); border-radius: 50%; }
+.status-mark span, .status-mark span:after { display: block; width: 17px; height: 4px; border-radius: 2px; background: #ef5361; content: ''; }
+.status-mark span:after { transform: rotate(90deg); }
+.status-copy { min-width: 0; flex: 1; }
+.eyebrow, .timer-label { color: #8f9aa8; font-size: 9px; font-weight: 700; letter-spacing: 1.5px; }
+h1 { margin: 3px 0 4px; font-size: 18px; line-height: 1.1; }
+p { margin: 0; color: #b3bbc5; font-size: 12px; line-height: 1.35; }
+.timer-wrap { min-width: 82px; text-align: right; }
+.timer { color: #fff; font-variant-numeric: tabular-nums; font-size: 24px; font-weight: 700; line-height: 1; }
+.timer-label { margin-top: 5px; font-size: 8px; }
+.hint { display: flex; align-items: center; gap: 7px; padding-left: 16px; border-left: 1px solid rgba(255,255,255,.12); color: #d9dee4; font-size: 11px; white-space: nowrap; }
+kbd { display: grid; place-items: center; width: 24px; height: 24px; border: 1px solid #657180; border-radius: 4px; color: #fff; font-size: 11px; font-weight: 700; }
+@media (max-width: 560px) { .medical-status { gap: 11px; padding: 14px; } .status-mark { flex-basis: 34px; width: 34px; height: 34px; } .hint { padding-left: 10px; } .hint span { display: none; } }
